@@ -29,7 +29,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.media.AudioManager;
 import android.preference.PreferenceManager;
 
-class ConfigurationManager implements OnSharedPreferenceChangeListener {
+public class ConfigurationManager implements OnSharedPreferenceChangeListener {
 
 	public final static String PREF_KEYGUARD_DISABLED = "setting_disable_keyguard";
 
@@ -45,24 +45,24 @@ class ConfigurationManager implements OnSharedPreferenceChangeListener {
 
 	private static ConfigurationManager sInstance;
 
-	private Activity mActivity;
+	private Context mContext;
 
 	private int mKeyguardState = 0;
 	
 	private KeyguardManager.KeyguardLock mKeyguardLock = null;
 
-	private ConfigurationManager(Activity activity) {
-		mActivity = activity;
-		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mActivity);
+	private ConfigurationManager(Context activity) {
+		mContext = activity;
+		final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 		prefs.registerOnSharedPreferenceChangeListener(this);
 		mKeyguardState = Integer.parseInt(prefs.getString(PREF_KEYGUARD_DISABLED, KEYGUARD_STATUS_ENABLED));
 	}
 
-	public static ConfigurationManager getInstance(Activity activity) {
+	public static ConfigurationManager getInstance(Context activity) {
 		if (sInstance == null) {
 			sInstance = new ConfigurationManager(activity);
 		} else {
-			sInstance.mActivity = activity;
+			sInstance.mContext = activity;
 		}
 		return sInstance;
 	}
@@ -74,10 +74,10 @@ class ConfigurationManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	public Context getActiveContext() {
-		return sInstance.mActivity;
+		return sInstance.mContext;
 	}
 	
-	public void disableKeyguard(Activity activity) {
+	public void disableKeyguard(Context activity) {
 		if (mKeyguardLock != null) {
 			mKeyguardLock.disableKeyguard();
 		} else {
@@ -99,7 +99,7 @@ class ConfigurationManager implements OnSharedPreferenceChangeListener {
 		if (key.equals(PREF_KEYGUARD_DISABLED)) {
 			mKeyguardState = Integer.parseInt(prefs.getString(PREF_KEYGUARD_DISABLED, KEYGUARD_STATUS_ENABLED));
 			if (mKeyguardState == INT_KEYGUARD_STATUS_ALL)
-				disableKeyguard(mActivity);
+				disableKeyguard(mContext);
 			else
 				enableKeyguard();
 		}
@@ -122,7 +122,7 @@ class ConfigurationManager implements OnSharedPreferenceChangeListener {
 		}
 		
 		activity.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-		mActivity = activity;
+		mContext = activity;
 	}
 	
 	public void onActivityPause() {
