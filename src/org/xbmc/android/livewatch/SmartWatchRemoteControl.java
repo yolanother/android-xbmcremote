@@ -64,6 +64,7 @@ class SmartWatchRemoteControl extends ControlExtensionViewGroup {
         super(context, deviceType, hostAppPackageName);
 		mRemoteController = new RemoteController(mContext.getApplicationContext());
 		mConfigurationManager = ConfigurationManager.getInstance(mContext);
+		setupButtons();
     }
 
     @Override
