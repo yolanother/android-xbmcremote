@@ -8,10 +8,11 @@
 
 package org.xbmc.android.widget;
 
-import org.xbmc.android.remote.presentation.widget.AbstractItemView;
 import org.xbmc.android.widget.IdleListDetector.OnListIdleListener;
 import org.xbmc.api.object.ICoverArt;
 import org.xbmc.api.type.ThumbSize;
+
+import com.doubtech.universalremote.modules.xbmc.presentation.widget.AbstractItemView;
 
 import android.util.Log;
 import android.widget.AbsListView;

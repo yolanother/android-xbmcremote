@@ -21,8 +21,9 @@
 
 package org.xbmc.api.presentation;
 
-import org.xbmc.android.remote.business.Command;
 import org.xbmc.api.business.INotifiableManager;
+
+import com.doubtech.universalremote.modules.xbmc.business.Command;
 
 public interface INotifiableController {
 	public void onWrongConnectionState(int state, INotifiableManager manager, Command<?> source);

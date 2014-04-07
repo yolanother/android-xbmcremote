@@ -16,7 +16,7 @@
 
 package org.xbmc.android.widget;
 
-import org.xbmc.android.remote.R;
+import com.doubtech.universalremote.modules.xbmc.R;
 
 import android.content.Context;
 import android.content.res.Resources;

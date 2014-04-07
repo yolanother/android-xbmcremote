@@ -1,8 +1,9 @@
 package org.xbmc.api.business;
 
-import org.xbmc.android.remote.presentation.widget.AbstractItemView;
 import org.xbmc.api.object.ICoverArt;
 import org.xbmc.api.type.ThumbSize;
+
+import com.doubtech.universalremote.modules.xbmc.presentation.widget.AbstractItemView;
 
 import android.content.Context;
 import android.graphics.Bitmap;

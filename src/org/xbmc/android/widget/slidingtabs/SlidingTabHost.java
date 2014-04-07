@@ -24,7 +24,7 @@ package org.xbmc.android.widget.slidingtabs;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.xbmc.android.remote.R;
+import com.doubtech.universalremote.modules.xbmc.R;
 
 import android.app.LocalActivityManager;
 import android.content.Context;

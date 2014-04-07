@@ -21,7 +21,7 @@
 
 package org.xbmc.android.util;
 
-import org.xbmc.android.remote.business.NowPlayingPollerThread;
+import com.doubtech.universalremote.modules.xbmc.business.NowPlayingPollerThread;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

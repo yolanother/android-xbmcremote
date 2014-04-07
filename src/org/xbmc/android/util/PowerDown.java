@@ -21,9 +21,10 @@
 
 package org.xbmc.android.util;
 
-import org.xbmc.android.remote.business.EventClientManager;
 import org.xbmc.api.business.IEventClientManager;
 import org.xbmc.eventclient.ButtonCodes;
+
+import com.doubtech.universalremote.modules.xbmc.business.EventClientManager;
 
 import android.app.Activity;
 import android.app.AlertDialog;

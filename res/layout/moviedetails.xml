@@ -16,7 +16,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
-			<org.xbmc.android.remote.presentation.widget.JewelView
+			<com.doubtech.universalremote.modules.xbmc.presentation.widget.JewelView
 							android:id="@+id/moviedetails_jewelcase" 
 							android:layout_width="wrap_content" 
 							android:layout_height="fill_parent"

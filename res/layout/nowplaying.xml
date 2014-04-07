@@ -99,7 +99,7 @@
 							<!-- comment android:progressDrawable to make graphical layout not crash -->
 
 						<!-- ##### JEWEL CASE #####  -->
-						<org.xbmc.android.remote.presentation.widget.JewelView
+						<com.doubtech.universalremote.modules.xbmc.presentation.widget.JewelView
 							android:id="@+id/now_playing_jewelcase" 
 							android:layout_width="wrap_content" 
 							android:layout_height="fill_parent"

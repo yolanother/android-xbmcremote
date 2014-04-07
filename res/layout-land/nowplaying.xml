@@ -45,7 +45,7 @@
 					<!-- ##### JEWEL CASE ##### -->
 					<LinearLayout android:id="@+id/now_playing_jewelcontainer" android:layout_alignParentLeft="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:orientation="vertical" 
 						android:gravity="center_horizontal">
-						<org.xbmc.android.remote.presentation.widget.JewelView
+						<com.doubtech.universalremote.modules.xbmc.presentation.widget.JewelView
 							android:layout_width="wrap_content" 
 							android:layout_height="wrap_content"
 							android:id="@+id/now_playing_jewelcase" />

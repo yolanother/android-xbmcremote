@@ -21,8 +21,9 @@
 
 package org.xbmc.android.widget.slidingtabs;
 
-import org.xbmc.android.remote.R;
 import org.xbmc.android.widget.slidingtabs.SlidingTabHost.SlidingTabSpec;
+
+import com.doubtech.universalremote.modules.xbmc.R;
 
 import android.content.Context;
 import android.content.res.TypedArray;

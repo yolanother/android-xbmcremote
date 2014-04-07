@@ -26,9 +26,10 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import org.xbmc.android.remote.business.provider.HostProvider;
-import org.xbmc.android.remote.business.provider.HostProvider.Hosts;
 import org.xbmc.api.object.Host;
+
+import com.doubtech.universalremote.modules.xbmc.business.provider.HostProvider;
+import com.doubtech.universalremote.modules.xbmc.business.provider.HostProvider.Hosts;
 
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -201,7 +202,7 @@ public abstract class HostFactory {
 	 * @param addr
 	 */
 	public static void saveHost(Context context, Host h) {
-		SharedPreferences.Editor ed = PreferenceManager.getDefaultSharedPreferences(context).edit();
+		SharedPreferences.Editor ed = context.getSharedPreferences("hosts", Context.MODE_PRIVATE).edit();
 		if (h != null) {
 			ed.putInt(SETTING_HOST_ID, h.id);
 		} else {
@@ -211,7 +212,7 @@ public abstract class HostFactory {
 		host = h;
 		ClientFactory.resetClient(h);
 	}
-	
+
 	/**
 	 * Reads the preferences and returns the currently set host. If there is no
 	 * preference set, return the first host. If there is no host set, return
@@ -219,14 +220,28 @@ public abstract class HostFactory {
 	 * @param activity Reference to current activity
 	 * @return Current host
 	 */
-	public static void readHost(Context context) {
-		int hostId = PreferenceManager.getDefaultSharedPreferences(context).getInt(SETTING_HOST_ID, -1);
+	public static Host readHost(Context context) {
+		int hostId = context.getSharedPreferences("hosts", Context.MODE_PRIVATE).getInt(SETTING_HOST_ID, -1);
 		if (hostId < 0) {
 			host = getHost(context);
 		} else {
 			host = getHost(context, hostId);
 		}
 		Log.i(TAG, "XBMC Host = " + (host == null ? "[host=null]" : host.addr));
+		return host;
+	}
+
+	/**
+	 * Reads the preferences and returns the currently set host. If there is no
+	 * preference set, return the first host. If there is no host set, return
+	 * null.
+	 * @param activity Reference to current activity
+	 * @return Current host
+	 */
+	public static Host readHost(Context context, int hostId) {
+		host = getHost(context, hostId);
+		Log.i(TAG, "XBMC Host = " + (host == null ? "[host=null]" : host.addr));
+		return host;
 	}
 	
 	/**
