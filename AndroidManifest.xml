@@ -38,8 +38,9 @@
         android:required="false" />
 
     <application
-        android:icon="@drawable/icon"
-        android:label="@string/app_name" >
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:allowBackup="true" >
         <activity
             android:name="com.doubtech.universalremote.modules.xbmc.presentation.activity.HomeActivity"
             android:label="@string/app_name"

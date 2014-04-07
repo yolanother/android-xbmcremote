@@ -29,7 +29,7 @@ If you are connecting through 3G please make sure that UDP port 9777 is forwarde
     <string name="setup_wizard_final_message">Everything worked. You can now finish the wizard and start using the remove.
 
 Have fun.</string>
-    <string name="app_name">XBMC Remote</string>
+    <string name="app_name">XBMC Universal Remote Module</string>
 	<string name="app_receiver">XbmcBroadcastReceiver</string>
 	<string name="sms_received">SMS received</string>
 	<string name="alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
